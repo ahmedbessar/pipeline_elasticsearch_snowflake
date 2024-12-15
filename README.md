@@ -46,11 +46,12 @@ cd pipeline_elasticsearch_snowflake
 ### Step 2: Set Up Environment Variables
 Create an .env file inside the scripts/ folder.
 Add your environment variables (e.g., database credentials, API keys, etc.) to .env:
+```
 DB_HOST=<your-database-host>
 DB_USER=<your-username>
 DB_PASSWORD=<your-password>
 DB_NAME=<your-database-name>
-
+```
 
 
 Contact
