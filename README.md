@@ -59,16 +59,18 @@ Run the following command to spin up all necessary services (Airflow, DBT, etc.)
 docker-compose up --build
 ```
 
-Step 4: Access the Services
+### Step 4: Access the Services
 - Airflow Webserver: http://localhost:8080
 - Snowflake: Connect via your Snowflake account.
 - DBT CLI: Interact with DBT inside the Docker container.
 
 
-bash
-Copy code
+### Step 5: Run a Sample Workflow
+Access the Airflow UI.
+Trigger the create_layers.py DAG to test the pipeline.
 
-Contact
-Ahmed Bessar
-Email: ahmedbessar28@gmail.com
-GitHub: @ahmedbessar
+### Contact
+Ahmed Bessar 
+Email: ahmedbessar28@gmail.com  
+GitHub: @ahmedbessar  
+ 
