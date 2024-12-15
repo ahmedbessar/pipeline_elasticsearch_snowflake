@@ -17,8 +17,6 @@ This repository contains a robust data pipeline that leverages **Apache Airflow*
 ---
 
 
----
-
 ## Prerequisites
 
 To use or extend this project, you need the following installed on your system:
