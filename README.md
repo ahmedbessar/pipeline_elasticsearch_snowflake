@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository demonstrates a modern data pipeline integrating Apache Airflow, DBT (Data Build Tool), Snowflake, and Docker. The pipeline is designed to perform efficient ETL (Extract, Transform, Load) processes while emphasizing scalability, maintainability, and performance. It serves as a framework for automating data workflows, transforming raw data into meaningful insights, and managing data assets effectively.
+This repository demonstrates a modern data pipeline integrating Apache Airflow, DBT (Data Build Tool), Snowflake, and Docker. The **pipeline** is designed to perform efficient ETL (Extract, Transform, Load) processes while emphasizing scalability, maintainability, and performance. It serves as a framework for automating data workflows, transforming raw data into meaningful insights, and managing data assets effectively.
 
 ---
 
