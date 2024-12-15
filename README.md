@@ -16,6 +16,33 @@ This repository contains a robust data pipeline that leverages **Apache Airflow*
 
 ---
 
-## Project Structure
 
-Airflow_DBT_Snowflake_Docker/ │ ├── docker-compose.yml # Docker configuration file ├── dags/ # Airflow DAGs folder │ ├── create_layers.py # DAG for data layer creation │ └── pycache/ # Compiled Python files (ignored) │ ├── dbtlearn/ # DBT project folder │ ├── dbt_project.yml # DBT project configuration │ ├── models/ # DBT models folder │ │ └── mart_classified_reports/ │ │ └── Brands_traffic.sql # Sample DBT model │ ├── seeds/ # DBT seed files │ │ └── full_moon_dates.csv # Example seed data │ └── target/ # Compiled and manifest files (ignored) │ ├── docker/ # Docker-specific resources │ ├── dbt/ # DBT Docker setup │ │ ├── Dockerfile # DBT Dockerfile │ │ ├── my_password.txt # Sensitive info (ignored) │ │ ├── requirements.txt # Python dependencies │ └── dags/ # DAGs for containerization │ ├── scripts/ # Helper scripts for pipeline tasks │ ├── extraction_load.py # Data extraction and loading script │ ├── incremental_load.py # Incremental loading script │ ├── .env # Environment variables (ignored) │ └── snowflake_config/ # Snowflake SQL configuration files └── first_step_sf_config.sql # Initial Snowflake setup
+---
+
+## Prerequisites
+
+To use or extend this project, you need the following installed on your system:
+
+1. **Docker** (version 20.10 or later)
+2. **Docker Compose**
+3. **Python** (version 3.7 or later)
+4. **DBT** (version 1.0 or later)
+5. **Snowflake** account and credentials
+6. **Git** (for version control)
+
+---
+
+## Getting Started
+
+### Step 1: Clone the Repository
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/ahmedbessar/pipeline_elasticsearch_snowflake.git
+cd pipeline_elasticsearch_snowflake
+
+Contact
+Ahmed Bessar
+Email: ahmedbessar28@gmail.com
+GitHub: @ahmedbessar
