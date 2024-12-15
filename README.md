@@ -68,7 +68,7 @@ Access the Airflow UI.
 Trigger the create_layers.py DAG to test the pipeline.
 
 ### Support
-If you encounter issues or have questions about this project, feel free to open an issue on GitHub.
+If you encounter issues or have questions about this project, feel free to [open an issue](https://github.com/ahmedbessar/pipeline_elasticsearch_snowflake/issues) on GitHub.
 
 ### Contact
 Ahmed Bessar 
