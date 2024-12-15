@@ -53,6 +53,20 @@ DB_PASSWORD=<your-password>
 DB_NAME=<your-database-name>
 ```
 
+### Step 3: Start Docker Containers
+Run the following command to spin up all necessary services (Airflow, DBT, etc.):
+```bash
+docker-compose up --build
+```
+
+Step 4: Access the Services
+- Airflow Webserver: http://localhost:8080
+- Snowflake: Connect via your Snowflake account.
+- DBT CLI: Interact with DBT inside the Docker container.
+
+
+bash
+Copy code
 
 Contact
 Ahmed Bessar
