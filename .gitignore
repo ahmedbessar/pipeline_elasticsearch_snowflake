@@ -1,0 +1,20 @@
+# Ignore environment files and sensitive credentials
+scripts/.env
+docker/dbt/my_password.txt
+
+# Ignore Python cache files
+**/__pycache__/
+*.pyc
+
+# Ignore DBT target directory
+dbtlearn/target/
+
+# Ignore logs
+logs/
+
+# Ignore Docker-specific files
+docker/dbt/.env.template
+
+# Ignore temporary files
+*.log
+*.tmp

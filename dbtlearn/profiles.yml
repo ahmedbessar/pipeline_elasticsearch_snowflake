@@ -1,0 +1,13 @@
+dbtlearn:
+  outputs:
+    dev:
+      account: XOZYWQD-PS86538
+      database: WASEET
+      password: 9PtF2UPj4Azm$sJ
+      role: transform
+      schema: DEV
+      threads: 1
+      type: snowflake
+      user: AHMEDBISAR
+      warehouse: COMPUTE_WH
+  target: dev
