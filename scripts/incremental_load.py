@@ -52,7 +52,7 @@ query = {
         }
     }
 }
-response = url.search(index="classifieds", body=query, size=100)  # Adjust the size as needed
+response = url.search(index="classifieds", body=query, size=10000)  # Adjust the size as needed
 
 # Step 3: Convert Elasticsearch response to DataFrame
 data = [hit["_source"] for hit in response["hits"]["hits"]]
