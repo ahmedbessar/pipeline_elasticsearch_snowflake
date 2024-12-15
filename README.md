@@ -2,17 +2,17 @@
 
 ## Overview
 
-This repository contains a robust data pipeline that leverages **Apache Airflow**, **DBT (Data Build Tool)**, **Snowflake**, and **Docker** to orchestrate and transform data. It demonstrates the integration of modern tools and frameworks for ETL (Extract, Transform, Load) processes with an emphasis on scalability, maintainability, and performance.
+This repository demonstrates a modern data pipeline integrating Apache Airflow, DBT (Data Build Tool), Snowflake, and Docker. The pipeline is designed to perform efficient ETL (Extract, Transform, Load) processes while emphasizing scalability, maintainability, and performance. It serves as a framework for automating data workflows, transforming raw data into meaningful insights, and managing data assets effectively.
 
 ---
 
 ## Features
 
-- **Orchestration with Airflow**: Automates and schedules data workflows.
-- **Data Transformation with DBT**: Builds, tests, and documents data models.
-- **Snowflake Integration**: Efficient data storage and query processing.
-- **Containerization with Docker**: Ensures consistent and portable environments.
-- **Extensible Architecture**: Easily adaptable for different data engineering use cases.
+- **Orchestration with Airflow**: Schedule and monitor workflows seamlessly.
+- **Data Transformation with DBT**: Perform reliable, modular transformations and testing of your data models.
+- **Snowflake Integration**: Scalable, cloud-based storage and computation for analytical workloads.
+- **Containerization with Docker**: Ensures consistency across environments and simplifies deployment.
+- **Extensible Architecture**: The architecture can be tailored to support additional use cases or integrations.
 
 ---
 
@@ -67,8 +67,10 @@ docker-compose up --build
 Access the Airflow UI.
 Trigger the create_layers.py DAG to test the pipeline.
 
+### Support
+If you encounter issues or have questions about this project, feel free to open an issue on GitHub.
+
 ### Contact
 Ahmed Bessar 
 Email: ahmedbessar28@gmail.com  
-GitHub: @ahmedbessar  
- 
+GitHub: @ahmedbessar
