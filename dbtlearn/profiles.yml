@@ -1,13 +1,13 @@
 dbtlearn:
   outputs:
     dev:
-      account: XOZYWQD-PS86538
-      database: WASEET
-      password: 9PtF2UPj4Azm$sJ
+      account: "{{ env_var('DBT_ACCOUNT') }}"
+      database: "{{ env_var('DBT_DATABASE') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
       role: transform
       schema: DEV
       threads: 1
       type: snowflake
-      user: AHMEDBISAR
+      user: "{{ env_var('DBT_USER') }}"
       warehouse: COMPUTE_WH
   target: dev
