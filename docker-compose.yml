@@ -168,7 +168,10 @@ services:
     restart: unless-stopped
     volumes:
       - ./dbtlearn:/dbtlearn
+      - ./dbtlearn/.env:/dbtlearn/.env
     ports:
       - "8085:8085"
     environment:
       - TZ=Etc/GMT
+    env_file:
+      - ./dbtlearn/.env
