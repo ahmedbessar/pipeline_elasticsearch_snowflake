@@ -1,5 +1,6 @@
 # Airflow, DBT, Snowflake, and Docker Pipeline
-![image](https://github.com/user-attachments/assets/26a98692-429b-4a15-8aa6-817e8d38d6f8)
+![image](https://github.com/user-attachments/assets/737a91ce-9c58-4304-864b-051c1fa00d74)
+
 
 ## Overview
 
