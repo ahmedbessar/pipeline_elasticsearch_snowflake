@@ -66,7 +66,8 @@ docker-compose up --build
 
 ### Step 5: Run a Sample Workflow
 Access the Airflow UI.
-Trigger the create_layers.py DAG to test the pipeline.
+Trigger the create_layers.py DAG to test the pipeline.  
+
 ![image](https://github.com/user-attachments/assets/19775e19-c38c-42d1-8d69-089a6d44c952)
 
 ---
