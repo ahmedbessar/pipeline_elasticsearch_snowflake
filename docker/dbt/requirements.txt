@@ -3,3 +3,4 @@ dbt-snowflake==1.5.0
 markupsafe==2.0.1
 snowflake-connector-python
 python-dotenv
+pip install pytz
