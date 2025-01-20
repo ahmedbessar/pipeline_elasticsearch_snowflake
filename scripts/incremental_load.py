@@ -8,7 +8,7 @@ import logging
 from dotenv import load_dotenv
 
 # Elasticsearch endpoint
-url = "https://vpc-waseet-prod-ma4lk6ppczqcqiepfb2q2ayimy.eu-west-1.es.amazonaws.com/classifieds/_search"
+url = "https://.eu-west-1.es.amazonaws.com/classifieds/_search"
 headers = {'Content-Type': 'application/json'}
 
 # Load environment variables
@@ -37,7 +37,7 @@ except Exception as e:
 
 cursor = snowflake_conn.cursor()
 
-# Initialize state
+# Initialize state 
 state_file = "last_run_state.txt"
 default_start_date = "2024-01-01T00:00:00Z"  # Fallback if no state exists
 

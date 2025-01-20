@@ -16,9 +16,9 @@ cursor = db_connection.cursor()
 
 # Ensure table schema matches expected structure
 create_elasticsearch_table_query = """
-IF OBJECT_ID('dbo.elasticsearch_data', 'U') IS NULL 
+IF OBJECT_ID('dbo.classified_log_report_els', 'U') IS NULL 
 BEGIN
-    CREATE TABLE dbo.elasticsearch_data (   
+    CREATE TABLE dbo.classified_log_report_els (   
         EntityID INT,
         EntityTitle NVARCHAR(255),
         Breadcrumb NVARCHAR(MAX),
@@ -65,7 +65,7 @@ headers = {
     'Content-Type': 'application/json',
 }
 
-base_url = 'https://elasticsearch1.waseet.net/classified-log-report-per-day/_search'
+base_url = 'https://elasticsearch1.waseet.net/log-classified-report-day-kw/_search'
 auth = ('bisar', '6gvMZJ4zTeBR82R')
 page_size = 10000  # Number of records per page
 search_after_value = None  # Initialize search_after
@@ -84,6 +84,14 @@ while True:
         },
         'sort': [{'day': 'asc'}, {'entity_id': 'asc'}],  # Sort order for pagination
     }
+
+    # json_data = {
+    # 'size': page_size,
+    # 'query': {
+    #     'match_all': {}  # Replace with match_all to include all documents
+    # },
+    # 'sort': [{'day': 'asc'}, {'entity_id': 'asc'}]  # Sort order for pagination
+    # }
 
     # Add search_after for subsequent pages
     if search_after_value:
@@ -117,12 +125,13 @@ while True:
 
         # Correctly extract Breadcrumb Titles from 'breadcrumb_title'
         breadcrumb_title = source.get('breadcrumb_title', {})
-        breadcrumb_title_english = breadcrumb_title.get('en', '')  # Extract English breadcrumb title
-        breadcrumb_title_arabic = breadcrumb_title.get('ar', '')   # Extract Arabic breadcrumb title
+        breadcrumb_title_english = breadcrumb_title.get('en', '') if isinstance(breadcrumb_title, dict) else ''  # Extract English breadcrumb title
+        breadcrumb_title_arabic = breadcrumb_title.get('ar', '') if isinstance(breadcrumb_title, dict) else ''  # Extract English breadcrumb title
+        # breadcrumb_title_arabic = breadcrumb_title.get('ar', '')   # Extract Arabic breadcrumb title
 
         # Insert data into database
         cursor.execute("""
-            INSERT INTO dbo.elasticsearch_data (
+            INSERT INTO dbo.classified_log_report_els (
                 EntityID, EntityTitle, Breadcrumb, BreadcrumbTitleEnglish, BreadcrumbTitleArabic, 
                 CallAndroidCount, CallHuaweiCount, CallIOSCount, CallWebCount, ChatAndroidCount, 
                 ChatHuaweiCount, ChatIOSCount, ChatWebCount, CountryAlias, CreatedAt, Day, 

@@ -33,5 +33,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbtlearn:
     +materialized: view
-    business_layer:
+    mart_classified:
       +materialized: table
+
+# models:
+#   dbtlearn:
+#     snowflake:
+#       +materialized: view
+#       business_layer:
+#         +materialized: table
+#     sql_server:
+#       +materialized: view
+#       business_layer:
+#         +materialized: table

@@ -7,8 +7,8 @@ import os
 
 
 # Elasticsearch endpoint
-url = "https://vpc-waseet-prod-ma4lk6ppczqcqiepfb2q2ayimy.eu-west-1.es.amazonaws.com/classifieds/_search"
-headers = {'Content-Type': 'application/json'}
+# url = "https://vpc-waseet-prod-ma4lk6ppczqcqiepfb2q2ayimy.eu-west-1.es.amazonaws.com/classifieds/_search"
+# headers = {'Content-Type': 'application/json'}
 
 # Database connection
 db_connection = pyodbc.connect(
@@ -20,52 +20,6 @@ db_connection = pyodbc.connect(
     'Trusted_Connection=yes;'
 )
 cursor = db_connection.cursor()
-
-# SQL table creation
-create_table_query = """
-IF OBJECT_ID('dbo.classifieds', 'U') IS NULL
-BEGIN
-    CREATE TABLE dbo.classifieds (
-        country NVARCHAR(100),
-        agent NVARCHAR(100),
-        has_images BIT,
-        nid INT,
-        negotiable BIT,
-        is_muted BIT,
-        global_type NVARCHAR(50),
-        approved BIT,
-        price FLOAT,
-        translated_title NVARCHAR(MAX),
-        id INT,
-        paid_for_taxonomy_id INT,
-        created DATETIME,
-        created_by NVARCHAR(100),
-        phone_number NVARCHAR(100),
-        status NVARCHAR(50),
-        handled_by NVARCHAR(100),
-        request_type NVARCHAR(50),
-        city NVARCHAR(100),
-        rejected BIT,
-        sub_category NVARCHAR(100),
-        enabled BIT,
-        ad_source NVARCHAR(100),
-        advertisement_type NVARCHAR(50),
-        bundle NVARCHAR(100),
-        leaf_taxonomy_id INT,
-        taxonomy_status NVARCHAR(50),
-        data_type NVARCHAR(50),
-        paid FLOAT,
-        category NVARCHAR(100),
-        username NVARCHAR(100),
-        approved_date DATETIME,
-        original_creation DATETIME,
-        sticky_payment_start_time DATETIME, -- New field
-        sticky_expiry DATETIME              -- New field
-    )
-END
-"""
-cursor.execute(create_table_query)
-db_connection.commit()
 
 
 # Load JSON data for taxonomy
@@ -206,134 +160,8 @@ db_connection.commit()
 print("taxonomy data inserted into the database.")
 
 
-# Initialize an empty list to hold all results
-all_results = []
-page_size = 100  # Number of records per page
-search_after_value = None
-
-# Helper functions
-def convert_unix_to_datetime(unix_timestamp):
-    try:
-        return datetime.fromtimestamp(int(unix_timestamp)) if unix_timestamp and str(unix_timestamp).isdigit() else None
-    except (ValueError, TypeError):
-        return None
-
-def extract_numeric_id(id_value):
-    numeric_part = re.search(r'\d+', id_value)
-    return int(numeric_part.group()) if numeric_part else None
-
-# Insert data into SQL Server
-insert_query = """
-INSERT INTO dbo.classifieds (
-    country, agent, has_images, nid, negotiable, is_muted, global_type, approved, price,
-    translated_title, id, paid_for_taxonomy_id, created, created_by, phone_number, status,
-    handled_by, request_type, city, rejected, sub_category, enabled, ad_source,
-    advertisement_type, bundle, leaf_taxonomy_id, taxonomy_status, data_type, paid, category,
-    username, approved_date, original_creation, sticky_payment_start_time, sticky_expiry
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
-"""
-
-# Fetch and process data from Elasticsearch using search_after
-while True:
-    payload = {
-        "_source": {
-            "excludes": ["images", "description", "image_log", "translated_description", "videos", "title"]
-        },
-        "query": {
-            "bool": {
-                "must": [
-                    {"match": {"country": "Kuwait"}},
-                    {"range": {"created": {
-                        "gte": 1722470400,  # August 1, 2024, 00:00:00 UTC
-                        "lte": 1730419200    # November 1, 2024, 00:00:00 UTC (exclusive)
-                        }}}
-                ]
-            }
-        },
-        "size": page_size,
-        "sort": [{"created": "asc"}, {"nid": "asc"}]
-    }
-
-    # Add search_after if available
-    if search_after_value:
-        payload["search_after"] = search_after_value
-
-    response = requests.get(url, headers=headers, data=json.dumps(payload))
-    if response.status_code != 200:
-        print(f"Error: {response.status_code} - {response.text}")
-        break
-
-    data = response.json()
-    hits = data['hits']['hits']
-    if not hits:
-        break  # Stop if there are no more hits
-
-    for result in hits:
-        source = result['_source']
-        extracted_data = {
-            "country": source.get("country"),
-            "agent": source.get("agent"),
-            "has_images": source.get("has_images"),
-            "nid": source.get("nid"),
-            "negotiable": source.get("negotiable"),
-            "is_muted": source.get("is_muted"),
-            "global_type": source.get("global_type"),
-            "approved": source.get("approved"),
-            "price": source.get("price"),
-            "translated_title": source.get("translated_title"),
-            "id": extract_numeric_id(source.get("id")),
-            "paid_for_taxonomy_id": source.get("paid_for_taxonomy_id"),
-            "created": convert_unix_to_datetime(source.get("created")),
-            "created_by": source.get("created_by"),
-            "phone_number": source.get("phone_number"),
-            "status": source.get("status"),
-            "handled_by": source.get("handled_by"),
-            "request_type": source.get("request_type"),
-            "city": source.get("city")[0] if isinstance(source.get("city"), list) and source.get("city") else None,
-            "rejected": source.get("rejected"),
-            "sub_category": source.get("sub_category"),
-            "enabled": source.get("enabled"),
-            "ad_source": source.get("ad_source"),
-            "advertisement_type": source.get("advertisement_type"),
-            "bundle": source.get("bundle"),
-            "leaf_taxonomy_id": source.get("leaf_taxonomy_id"),
-            "taxonomy_status": source.get("taxonomy_status"),
-            "data_type": source.get("data_type"),
-            "paid": source.get("paid"),
-            "category": source.get("category"),
-            "username": source.get("username"),
-            "approved_date": convert_unix_to_datetime(source.get("approved_date")),
-            "original_creation": convert_unix_to_datetime(source.get("original_creation")),
-            "sticky_payment_start_time": convert_unix_to_datetime(source.get("sticky_payment_start_time")),  # New field
-            "sticky_expiry": convert_unix_to_datetime(source.get("sticky_expiry"))     # New field
-        }
-        
-        # Insert the record
-        cursor.execute(insert_query, (
-            extracted_data["country"], extracted_data["agent"], extracted_data["has_images"], extracted_data["nid"],
-            extracted_data["negotiable"], extracted_data["is_muted"], extracted_data["global_type"], extracted_data["approved"],
-            extracted_data["price"], extracted_data["translated_title"], extracted_data["id"], extracted_data["paid_for_taxonomy_id"],
-            extracted_data["created"], extracted_data["created_by"], extracted_data["phone_number"], extracted_data["status"],
-            extracted_data["handled_by"], extracted_data["request_type"], extracted_data["city"], extracted_data["rejected"],
-            extracted_data["sub_category"], extracted_data["enabled"], extracted_data["ad_source"],
-            extracted_data["advertisement_type"], extracted_data["bundle"], extracted_data["leaf_taxonomy_id"],
-            extracted_data["taxonomy_status"], extracted_data["data_type"], extracted_data["paid"], extracted_data["category"],
-            extracted_data["username"], extracted_data["approved_date"], extracted_data["original_creation"],
-            extracted_data["sticky_payment_start_time"], extracted_data["sticky_expiry"]
-        ))
-
-    # Commit every page to avoid data loss
-    db_connection.commit()
-
-    # Set search_after for the next batch
-    search_after_value = hits[-1]["sort"]
-    print(f"Fetched {len(hits)} records. Total fetched so far: {len(all_results)}")
-
-print("Data migration to the database is complete.")
-
-
 # Load JSON data for taxonomy
-category_tree_file = 'category_treeV2.json'
+category_tree_file = 'C:/Users/Abisar/pipline_waseet/Airflow_DBT_Snowflake_Docker/scripts/category_treeV2.json'
 
 with open(category_tree_file, 'r', encoding='utf-8') as file:
     category_tree_data  = json.load(file)

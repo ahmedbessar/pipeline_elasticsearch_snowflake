@@ -408,10 +408,6 @@ for row in kw_results:
 snowflake_conn.commit()
 print("taxonomy data inserted into the database.")
 
-
-
-
-
 # Close the database connection
 cursor.close()
 snowflake_conn.close()

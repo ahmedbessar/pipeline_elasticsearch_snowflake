@@ -1,0 +1,1083 @@
+Folder PATH listing
+Volume serial number is 3253-7B3E
+C:.
+¦   .gitignore
+¦   airflow-worker.log
+¦   docker-compose.yml
+¦   Dockerfile.worker
+¦   README.md
+¦   tree.txt
+¦   
++---dags
+¦   ¦   create_layers.py
+¦   ¦   data_migration.py
+¦   ¦   
+¦   +---__pycache__
+¦           create_layers.cpython-37.pyc
+¦           create_raw_layer.cpython-37.pyc
+¦           create_seed.cpython-37.pyc
+¦           create_seeds.cpython-37.pyc
+¦           data_migration.cpython-37.pyc
+¦           data_migration_dag.cpython-37.pyc
+¦           init.cpython-36.pyc
+¦           init.cpython-37.pyc
+¦           raw_layer_src.cpython-37.pyc
+¦           transform_and_analysis.cpython-36.pyc
+¦           transform_and_analysis.cpython-37.pyc
+¦           
++---dbtlearn
+¦   ¦   .user.yml
+¦   ¦   dbt_project.yml
+¦   ¦   nohup.out
+¦   ¦   profiles.yml
+¦   ¦   README.md
+¦   ¦   run_dbt.bat
+¦   ¦   
+¦   +---dbt_packages
+¦   +---logs
+¦   ¦       dbt.log
+¦   ¦       
+¦   +---macros
+¦   ¦       .gitkeep
+¦   ¦       
+¦   +---models
+¦   ¦   +---mart_classified
+¦   ¦   ¦       insights_listing_analysis.sql
+¦   ¦   ¦       
+¦   ¦   +---target_layer
+¦   ¦           dim_area.sql
+¦   ¦           dim_category.sql
+¦   ¦           dim_city.sql
+¦   ¦           dim_leafcategory.sql
+¦   ¦           dim_platform.sql
+¦   ¦           dim_rejectreason.sql
+¦   ¦           dim_subcategory.sql
+¦   ¦           dim_user.sql
+¦   ¦           tl_posts_kw.sql
+¦   ¦           
+¦   +---seeds
+¦   ¦       .gitkeep
+¦   ¦       
+¦   +---snapshots
+¦   ¦       .gitkeep
+¦   ¦       
+¦   +---target
+¦   ¦   ¦   catalog.json
+¦   ¦   ¦   graph.gpickle
+¦   ¦   ¦   graph_summary.json
+¦   ¦   ¦   index.html
+¦   ¦   ¦   manifest.json
+¦   ¦   ¦   partial_parse.msgpack
+¦   ¦   ¦   run_results.json
+¦   ¦   ¦   semantic_manifest.json
+¦   ¦   ¦   
+¦   ¦   +---compiled
+¦   ¦   ¦   +---dbtlearn
+¦   ¦   ¦       +---models
+¦   ¦   ¦           +---mart_classified
+¦   ¦   ¦           ¦       insights_listing_analysis.sql
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---mart_classified_reports
+¦   ¦   ¦           ¦       Brands_traffic.sql
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---target_layer
+¦   ¦   ¦                   dim_area.sql
+¦   ¦   ¦                   dim_category.sql
+¦   ¦   ¦                   dim_city.sql
+¦   ¦   ¦                   dim_leafcategory.sql
+¦   ¦   ¦                   dim_platform.sql
+¦   ¦   ¦                   dim_rejectreason.sql
+¦   ¦   ¦                   dim_subcategory.sql
+¦   ¦   ¦                   dim_user.sql
+¦   ¦   ¦                   tl_posts_kw.sql
+¦   ¦   ¦                   
+¦   ¦   +---run
+¦   ¦       +---dbtlearn
+¦   ¦           +---models
+¦   ¦               +---mart_classified
+¦   ¦               ¦       insights_listing_analysis.sql
+¦   ¦               ¦       
+¦   ¦               +---mart_classified_reports
+¦   ¦               ¦       Brands_traffic.sql
+¦   ¦               ¦       
+¦   ¦               +---target_layer
+¦   ¦                       dim_category.sql
+¦   ¦                       tl_posts_kw.sql
+¦   ¦                       
+¦   +---tests
+¦           .gitkeep
+¦           
++---docker
+¦   +---dags
+¦   ¦   ¦   create_layers.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           create_layers.cpython-37.pyc
+¦   ¦           create_raw_layer.cpython-37.pyc
+¦   ¦           create_seed.cpython-37.pyc
+¦   ¦           create_seeds.cpython-37.pyc
+¦   ¦           init.cpython-36.pyc
+¦   ¦           init.cpython-37.pyc
+¦   ¦           raw_layer_src.cpython-37.pyc
+¦   ¦           transform_and_analysis.cpython-36.pyc
+¦   ¦           transform_and_analysis.cpython-37.pyc
+¦   ¦           
+¦   +---dbt
+¦           .dockerignore
+¦           .env.template
+¦           build-docker-image.sh
+¦           Dockerfile
+¦           my_password.txt
+¦           requirements.txt
+¦           
++---logs
+¦   ¦   dbt.log
+¦   ¦   
+¦   +---dag_id=create_layers_in_snowflake
+¦   ¦   +---run_id=manual__2024-12-15T14?23?52.725784+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-15T14?47?04.592981+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-15T14?51?31.889268+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-15T14?53?45.233983+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-15T14?56?27.016670+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-15T14?59?52.174376+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-15T15?18?24.505379+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-15T15?19?40.210088+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-16T14?59?08.827822+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T08?06?11.468824+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T09?41?52.774240+00?00
+¦   ¦   ¦   +---task_id=incremental_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T10?10?49.827369+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T10?44?24.201005+00?00
+¦   ¦   ¦   +---task_id=incremental_load_bash
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_load_python
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T10?53?49.113601+00?00
+¦   ¦   ¦   +---task_id=incremental_load_bash
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_load_python
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T12?12?54.689382+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_load_bash
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_load_python
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T13?36?35.694478+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=extraction_load_python
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_load_bash
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_load_python
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T13?38?01.324252+00?00
+¦   ¦   ¦   +---task_id=extraction_load_python
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T13?38?02.130214+00?00
+¦   ¦   ¦   +---task_id=extraction_load_python
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T22?15?21.038471+00?00
+¦   ¦   ¦   +---task_id=extraction_load_python
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-09T20?23?39.865700+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T19?35?19.879378+00?00
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T19?40?23.575519+00?00
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T19?46?46.239024+00?00
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T19?57?28.965917+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T20?01?47.377951+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T20?07?52.499196+00?00
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T20?40?29.093839+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T20?46?09.027435+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T20?48?14.161851+00?00
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T21?21?46.492499+00?00
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T21?39?00.798197+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T21?45?49.428751+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T21?52?55.792254+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T22?01?32.533978+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T22?23?32.304375+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T23?22?25.645532+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-11T11?31?29.026350+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-12T23?25?42.863060+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-17T21?14?55.116038+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-17T22?32?36.296160+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       attempt=3.log
+¦   ¦   ¦   ¦       attempt=4.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-17T22?55?20.535235+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-07T12?00?00+00?00
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-08T12?00?00+00?00
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-09T12?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_classified_log_report
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=incremental_product_post_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           attempt=4.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-10T12?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-11T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           attempt=4.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-12T12?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-16T12?00?00+00?00
+¦   ¦       +---task_id=create_business_layer
+¦   ¦       ¦       attempt=1.log
+¦   ¦       ¦       
+¦   ¦       +---task_id=run_extraction_and_load
+¦   ¦               attempt=1.log
+¦   ¦               attempt=2.log
+¦   ¦               
+¦   +---dag_id=data_extraction_and_load_dag
+¦   ¦   +---run_id=manual__2024-12-17T15?27?54.848134+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T15?41?41.797677+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T16?44?19.821222+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T17?06?02+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2024-12-17T17?33?30.917574+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-10T21?25?20.194471+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2024-12-16T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2024-12-17T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2024-12-18T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2024-12-19T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2024-12-20T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2024-12-21T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2024-12-22T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-07T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-08T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-09T12?00?00+00?00
+¦   ¦   ¦   +---task_id=run_extraction_and_load
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-11T09?00?00+00?00
+¦   ¦   ¦   +---task_id=start_pipeline
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-12T09?00?00+00?00
+¦   ¦   ¦   +---task_id=start_pipeline
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-13T09?00?00+00?00
+¦   ¦   ¦   +---task_id=start_pipeline
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-14T09?00?00+00?00
+¦   ¦       +---task_id=start_pipeline
+¦   ¦               attempt=1.log
+¦   ¦               attempt=2.log
+¦   ¦               attempt=3.log
+¦   ¦               
+¦   +---dag_id=migarion
+¦   ¦   +---run_id=manual__2025-01-17T23?30?51.159010+00?00
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-18T01?54?03.053294+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-20T07?30?32.006820+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       attempt=3.log
+¦   ¦   ¦   ¦       attempt=4.log
+¦   ¦   ¦   ¦       attempt=5.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       attempt=3.log
+¦   ¦   ¦   ¦       attempt=4.log
+¦   ¦   ¦   ¦       attempt=5.log
+¦   ¦   ¦   ¦       attempt=6.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       attempt=3.log
+¦   ¦   ¦   ¦       attempt=4.log
+¦   ¦   ¦   ¦       attempt=5.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           attempt=2.log
+¦   ¦   ¦           attempt=3.log
+¦   ¦   ¦           attempt=4.log
+¦   ¦   ¦           attempt=5.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=manual__2025-01-20T09?46?09.975950+00?00
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-16T12?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-17T12?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-18T18?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-18T21?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-19T00?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-19T03?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-19T06?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-19T09?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       attempt=3.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-19T12?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-19T15?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-19T18?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-19T21?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-20T00?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-20T03?00?00+00?00
+¦   ¦   ¦   +---task_id=create_business_layer
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=create_lineage_graph
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       attempt=2.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_classified_log_kw
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_all
+¦   ¦   ¦   ¦       attempt=1.log
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---task_id=run_prod_post_kw
+¦   ¦   ¦           attempt=1.log
+¦   ¦   ¦           
+¦   ¦   +---run_id=scheduled__2025-01-20T06?00?00+00?00
+¦   ¦       +---task_id=create_business_layer
+¦   ¦       ¦       attempt=1.log
+¦   ¦       ¦       
+¦   ¦       +---task_id=create_lineage_graph
+¦   ¦       ¦       attempt=1.log
+¦   ¦       ¦       
+¦   ¦       +---task_id=run_classified_log_all
+¦   ¦       ¦       attempt=1.log
+¦   ¦       ¦       
+¦   ¦       +---task_id=run_classified_log_kw
+¦   ¦       ¦       attempt=1.log
+¦   ¦       ¦       
+¦   ¦       +---task_id=run_prod_post_all
+¦   ¦       ¦       attempt=1.log
+¦   ¦       ¦       
+¦   ¦       +---task_id=run_prod_post_kw
+¦   ¦               attempt=1.log
+¦   ¦               
+¦   +---dag_processor_manager
+¦   ¦       dag_processor_manager.log
+¦   ¦       
+¦   +---scheduler
+¦       ¦   latest
+¦       ¦   
+¦       +---2024-12-15
+¦       ¦       create_layers.py.log
+¦       ¦       
+¦       +---2024-12-16
+¦       ¦       create_layers.py.log
+¦       ¦       
+¦       +---2024-12-17
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2024-12-18
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2024-12-19
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2024-12-20
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2024-12-21
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2024-12-22
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2024-12-23
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2024-12-24
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2024-12-25
+¦       +---2024-12-26
+¦       +---2024-12-27
+¦       +---2024-12-28
+¦       +---2024-12-29
+¦       +---2024-12-30
+¦       +---2024-12-31
+¦       +---2025-01-01
+¦       +---2025-01-02
+¦       +---2025-01-03
+¦       +---2025-01-04
+¦       +---2025-01-05
+¦       +---2025-01-07
+¦       +---2025-01-08
+¦       +---2025-01-09
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-10
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-11
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-12
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-13
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-14
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-15
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-16
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-17
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-18
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-19
+¦       ¦       create_layers.py.log
+¦       ¦       data_migration.py.log
+¦       ¦       
+¦       +---2025-01-20
+¦               create_layers.py.log
+¦               data_migration.py.log
+¦               
++---plugins
++---scripts
+¦       .env
+¦       category_tree.json
+¦       category_tree.py
+¦       category_treeV2.json
+¦       classifieds_els_to_snowflake.py
+¦       create_tree.py
+¦       extraction_load.py
+¦       extraction_load_elastic.py
+¦       full_classified_log_all2sf.py
+¦       full_classified_log_kw2sf.py
+¦       full_commercial_log_els2sf.py
+¦       full_prod_post_all2sf.py
+¦       full_prod_post_kw2sf.py
+¦       incremental_load.py
+¦       incremental_load.sh
+¦       inc_classified_log_all2sf.py
+¦       inc_classified_log_kw2sf.py
+¦       inc_prod_post_all2sf.py
+¦       inc_prod_post_kw2sf.py
+¦       kw.json
+¦       product_posts_kw.py
+¦       test.py
+¦       
++---snowflake_config
+        first_step_sf_config.sql
+        TRAFFIC_REPORT_TASK.sql
+        

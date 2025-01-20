@@ -21,7 +21,7 @@ x-airflow-common:
     - ./dbtlearn:/dbtlearn
     - ./scripts:/opt/airflow/scripts
     
-  user: "${AIRFLOW_UID:-50000}:0"
+  user: "1000:0" #"${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
     redis:
@@ -52,22 +52,6 @@ services:
       - POSTGRES_PASSWORD=airflow
       - POSTGRES_DB=airflow
     restart: always
-
-  # mssql:
-  #   image: mcr.microsoft.com/mssql/server:2019-latest
-  #   ports:
-  #     - "1433:1433"
-  #   environment:
-  #     SA_PASSWORD: "welcome1234"
-  #     ACCEPT_EULA: "Y"
-  #   volumes:
-  #     - ./sqlserver_data:/var/opt/mssql
-  #   restart: always
-  #   healthcheck:
-  #     test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S AHMED-BISAR  -U bisar -P welcome1234 -Q 'SELECT 1'"]
-  #     interval: 10s
-  #     timeout: 5s
-  #     retries: 3
 
   airflow-webserver:
     <<: *airflow-common
@@ -116,6 +100,9 @@ services:
         condition: service_completed_successfully
 
   airflow-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
     <<: *airflow-common
     command: celery worker
     healthcheck:
@@ -141,8 +128,8 @@ services:
       - -c
       - |
         mkdir -p logs dags
-        chown -R "${AIRFLOW_UID}:0" {logs,dags}
-        chown -R "${AIRFLOW_UID:-50000}:0" /opt/airflow
+        chown -R "1000:0" {logs,dags}
+        chown -R "1000:0" /opt/airflow
         exec /entrypoint airflow version
     environment:
       <<: *airflow-common-env

@@ -1,0 +1,5 @@
+# Extend the base Airflow image
+FROM apache/airflow:2.3.0
+
+# Install required Python packages
+RUN pip install snowflake-connector-python python-dotenv

@@ -1,0 +1,32 @@
+[0m01:52:32  Running with dbt=1.9.0
+Serving docs at 8085
+To access from your browser, navigate to: http://localhost:8085
+
+
+
+Press Ctrl+C to exit.
+[0m01:53:15  Encountered an error:
+
+[0m01:53:15  Traceback (most recent call last):
+  File "C:\Users\Abisar\dbt-airflow-demo\.venv\lib\site-packages\dbt\cli\requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\Abisar\dbt-airflow-demo\.venv\lib\site-packages\dbt\cli\requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Abisar\dbt-airflow-demo\.venv\lib\site-packages\dbt\cli\requires.py", line 235, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Abisar\dbt-airflow-demo\.venv\lib\site-packages\dbt\cli\requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Abisar\dbt-airflow-demo\.venv\lib\site-packages\dbt\cli\requires.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Abisar\dbt-airflow-demo\.venv\lib\site-packages\dbt\cli\main.py", line 301, in docs_serve
+    results = task.run()
+  File "C:\Users\Abisar\dbt-airflow-demo\.venv\lib\site-packages\dbt\task\docs\serve.py", line 29, in run
+    httpd.serve_forever()
+  File "C:\Users\Abisar\AppData\Local\Programs\Python\Python39\lib\socketserver.py", line 232, in serve_forever
+    ready = selector.select(poll_interval)
+  File "C:\Users\Abisar\AppData\Local\Programs\Python\Python39\lib\selectors.py", line 324, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+  File "C:\Users\Abisar\AppData\Local\Programs\Python\Python39\lib\selectors.py", line 315, in _select
+    r, w, x = select.select(r, w, w, timeout)
+KeyboardInterrupt
+

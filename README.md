@@ -60,7 +60,7 @@ docker-compose up --build
 
 ### Step 4: Access the Services
 - Airflow Webserver: http://localhost:8080
-- Snowflake: Connect via your Snowflake account.
+- Snowflake: Connect via Snowflake account.
 - DBT CLI: Interact with DBT inside the Docker container.
 
 

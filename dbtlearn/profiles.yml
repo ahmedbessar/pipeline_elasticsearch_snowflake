@@ -1,13 +1,40 @@
 dbtlearn:
   outputs:
     dev:
-      account: "{{ env_var('DBT_ACCOUNT') }}"
-      database: "{{ env_var('DBT_DATABASE') }}"
-      password: "{{ env_var('DBT_PASSWORD') }}"
+      account: dpouvep-ji35693
+      database: WASEET
+      password: dbtPassword123
       role: transform
       schema: DEV
       threads: 1
       type: snowflake
-      user: "{{ env_var('DBT_USER') }}"
+      user: dbt
       warehouse: COMPUTE_WH
   target: dev
+
+# dbtlearn:
+#   outputs:
+#     dev:
+#       type: snowflake
+#       account: dpouvep-ji35693 #XOZYWQD-PS86538
+#       user: dbt #AHMEDBISAR
+#       password: dbtPassword123
+#       role: transform
+#       database: WASEET
+#       warehouse: COMPUTE_WH
+#       schema: DEV
+#       threads: 1
+
+    # dev_sqlserver:
+    #   type: sqlserver
+    #   driver: "ODBC Driver 17 for SQL Server"
+    #   server: AHMED-BISAR
+    #   user: bisar
+    #   password: welcome1234
+    #   database: analytics_db
+    #   schema: dbo
+    #   threads: 4
+    #   options:
+    #   TrustServerCertificate: True  # Added to bypass SSL certificate validation
+
+  # target: dev_snowflake
