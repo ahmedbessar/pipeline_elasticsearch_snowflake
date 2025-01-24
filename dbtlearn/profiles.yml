@@ -1,7 +1,7 @@
 dbtlearn:
   outputs:
     dev:
-      account: dpouvep-ji35693
+      account: WTWIWPY-WY86925
       database: WASEET
       password: dbtPassword123
       role: transform

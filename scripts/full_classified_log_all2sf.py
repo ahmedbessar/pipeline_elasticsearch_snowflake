@@ -115,7 +115,7 @@ for index in indices:
             'query': {
                 'bool': {
                     'filter': [
-                        {'range': {'created_at': {'gte': '2024-10-01T00:00:00.230Z', 'lte': '2025-01-11T00:00:00.230Z'}}}
+                        {'range': {'created_at': {'gte': '2024-10-01T00:00:00.230Z', 'lte': '2025-01-25T00:00:00.230Z'}}}
                     ]
                 }
             },

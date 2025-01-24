@@ -12,7 +12,9 @@ x-airflow-common:
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
+    # AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
+    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
+
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
@@ -21,7 +23,7 @@ x-airflow-common:
     - ./dbtlearn:/dbtlearn
     - ./scripts:/opt/airflow/scripts
     
-  user: "1000:0" #"${AIRFLOW_UID:-50000}:0"
+  user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
     redis:
@@ -128,8 +130,8 @@ services:
       - -c
       - |
         mkdir -p logs dags
-        chown -R "1000:0" {logs,dags}
-        chown -R "1000:0" /opt/airflow
+        chown -R "${AIRFLOW_UID}:0" {logs,dags}
+        chown -R "${AIRFLOW_UID:-50000}:0" /opt/airflow
         exec /entrypoint airflow version
     environment:
       <<: *airflow-common-env

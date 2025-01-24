@@ -10,7 +10,7 @@ This repository demonstrates a modern data pipeline integrating Apache Airflow, 
 ## Features
 
 - **Orchestration with Airflow**: Schedule and monitor workflows seamlessly.
-- **Data Transformation with DBT**: Perform reliable, modular transformations and testing of your data models.
+- **Data Transformation with DBT**: Perform reliable, modular transformations and testing of the data models.
 - **Snowflake Integration**: Scalable, cloud-based storage and computation for analytical workloads.
 - **Containerization with Docker**: Ensures consistency across environments and simplifies deployment.
 - **Extensible Architecture**: The architecture can be tailored to support additional use cases or integrations.
@@ -44,7 +44,7 @@ cd pipeline_elasticsearch_snowflake
 
 ### Step 2: Set Up Environment Variables
 Create an .env file inside the scripts/ folder.
-Add your environment variables (e.g., database credentials, API keys, etc.) to .env:
+Add your environment variables (database credentials, API keys, etc.) to .env:
 ```
 DB_HOST=<your-database-host>
 DB_USER=<your-username>
